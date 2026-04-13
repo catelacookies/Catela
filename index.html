@@ -6,13 +6,13 @@
   <title>Catela | Joy in Small bites</title>
   <style>
     :root {
-      --main-color: #EFD6C9;
-      --logo-color: #E89995;
+      --main: #EFD6C9;
+      --logo: #E89995;
       --accent-yellow: #EBC200;
       --accent-brown: #D78E5E;
-      --text-color: #6b4b3e;
+      --text: #5f4036;
       --white: #ffffff;
-      --soft-bg: #fff8f4;
+      --bg: #fffaf7;
     }
 
     * {
@@ -23,23 +23,23 @@
 
     body {
       font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
-      background: linear-gradient(180deg, var(--soft-bg), var(--main-color));
-      color: var(--text-color);
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     header {
-      background-color: var(--logo-color);
+      background: var(--logo);
       color: var(--white);
       padding: 1rem 1.5rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
-      z-index: 10;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      z-index: 100;
     }
 
     nav {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
       display: flex;
       justify-content: space-between;
@@ -48,135 +48,196 @@
       flex-wrap: wrap;
     }
 
-    .logo {
-      font-size: 1.5rem;
+    .logo-text {
+      font-size: 1.6rem;
       font-weight: 800;
       letter-spacing: 0.5px;
     }
 
     .tagline {
+      font-size: 1rem;
       font-style: italic;
-      font-size: 0.95rem;
-      opacity: 0.95;
     }
 
     main {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
       padding: 2rem 1.5rem 3rem;
-      display: grid;
-      gap: 2rem;
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--main-color), var(--accent-brown));
-      border-radius: 22px;
-      padding: 2rem;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      background: linear-gradient(135deg, var(--main), #f8e6dc);
+      border-radius: 24px;
+      padding: 2.5rem;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
-      gap: 1.5rem;
+      gap: 2rem;
       align-items: center;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     }
 
     .hero h1 {
-      font-size: clamp(1.9rem, 3vw, 2.8rem);
-      margin-bottom: 0.7rem;
-      color: var(--text-color);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      color: var(--text);
     }
 
     .hero p {
-      max-width: 58ch;
+      max-width: 55ch;
       margin-bottom: 1rem;
+      font-size: 1.02rem;
     }
 
     .best-seller {
       display: inline-block;
-      background-color: var(--accent-yellow);
-      color: var(--text-color);
-      font-weight: 800;
-      padding: 0.5rem 0.9rem;
+      background: var(--accent-yellow);
+      color: var(--text);
+      padding: 0.6rem 1rem;
       border-radius: 999px;
-      font-size: 0.9rem;
+      font-weight: 800;
+      font-size: 0.95rem;
     }
 
-    .logo-photo,
-    .product-photo {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      border-radius: 18px;
-      border: 2px dashed var(--logo-color);
-      background: rgba(255, 255, 255, 0.65);
+    .hero-logo-box {
+      background: var(--white);
+      border: 3px dashed var(--logo);
+      border-radius: 22px;
+      min-height: 280px;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: var(--text-color);
-      font-weight: 700;
-      padding: 1rem;
+      padding: 1.2rem;
+      color: var(--logo);
+      font-weight: 800;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      margin-bottom: 2rem;
     }
 
     .section-title {
-      font-size: 1.55rem;
+      font-size: 1.7rem;
+      color: var(--logo);
       margin-bottom: 1rem;
-      color: var(--logo-color);
     }
 
+    .photo-gallery,
     .products,
-    .pricing,
-    .gallery {
-      background-color: rgba(255, 255, 255, 0.72);
-      border: 2px solid var(--accent-brown);
-      border-radius: 18px;
+    .pricing {
+      background: var(--white);
+      border: 2px solid var(--main);
+      border-radius: 22px;
       padding: 1.5rem;
-      backdrop-filter: blur(3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.04);
     }
 
-    .product-grid,
-    .pricing-grid,
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
     }
 
-    .card {
-      background-color: var(--white);
-      border: 1px solid var(--main-color);
-      border-radius: 16px;
+    .photo-slot {
+      background: #fff4ef;
+      border: 2px dashed var(--accent-brown);
+      border-radius: 18px;
+      height: 220px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       padding: 1rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      color: var(--accent-brown);
+      font-weight: 700;
+    }
+
+    .product-grid,
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: #fffaf7;
+      border: 1px solid #f2d9cf;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.05);
+    }
+
+    .product-image {
+      height: 180px;
+      background: linear-gradient(135deg, var(--main), #f9ece6);
+      border-bottom: 2px solid var(--logo);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--logo);
+      font-weight: 800;
+      padding: 1rem;
+    }
+
+    .card-content {
+      padding: 1rem;
     }
 
     .card h3 {
-      margin-bottom: 0.4rem;
-      color: var(--text-color);
+      margin-bottom: 0.45rem;
+      color: var(--text);
     }
 
     .card p {
-      font-size: 0.95rem;
+      font-size: 0.96rem;
+    }
+
+    .price-card {
+      padding: 1.2rem;
+      background: #fff8f3;
+      border: 1px solid #f0d8cc;
+      border-radius: 18px;
+      text-align: center;
+    }
+
+    .price-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .price-card p {
       margin-bottom: 0.8rem;
     }
 
     .price {
       display: inline-block;
-      margin-top: 0.5rem;
+      background: var(--accent-brown);
+      color: var(--white);
+      padding: 0.55rem 0.95rem;
+      border-radius: 999px;
       font-weight: 800;
-      color: var(--accent-brown);
     }
 
     footer {
+      background: var(--logo);
+      color: var(--white);
       text-align: center;
       padding: 1.2rem;
-      background-color: var(--logo-color);
-      color: var(--white);
-      font-size: 0.95rem;
       margin-top: 2rem;
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 760px) {
+    @media (max-width: 780px) {
       .hero {
         grid-template-columns: 1fr;
+      }
+
+      .hero-logo-box {
+        min-height: 220px;
       }
     }
 
@@ -187,9 +248,9 @@
       }
 
       .hero,
+      .photo-gallery,
       .products,
-      .pricing,
-      .gallery {
+      .pricing {
         padding: 1.1rem;
       }
     }
@@ -198,81 +259,94 @@
 <body>
   <header>
     <nav>
-      <div class="logo">Catela</div>
-      <div class="tagline">"Joy in Small bites"</div>
+      <div class="logo-text">Catela</div>
+      <div class="tagline">Joy in Small bites</div>
     </nav>
   </header>
 
   <main>
     <section class="hero">
       <div>
-        <h1>Homemade Cookies, Carefully Crafted</h1>
+        <h1>Freshly Baked Cookies Made with Love</h1>
         <p>
-          Catela is a small cookie business specializing in bite-sized joy.
-          We bake with care and flavor in every box, from our classic
-          snickerdoodles to rich chocolate chip cookies.
+          Welcome to Catela — your cozy cookie brand for soft, sweet, bite-sized treats.
+          From nutty powdered cookies to classic chocolate chip favorites, every batch
+          is made to bring comfort and joy.
         </p>
         <span class="best-seller">Best Seller: Small Nut Powdered Cookies</span>
       </div>
-      <div class="logo-photo">
-        Add Your Logo Here
-        <br />
-        <small>(replace with image)</small>
+
+      <div class="hero-logo-box">
+        YOUR LOGO GOES HERE
+        <br><br>
+        Replace this box with your logo image
       </div>
     </section>
 
-    <section class="gallery" aria-labelledby="gallery-title">
-      <h2 id="gallery-title" class="section-title">Photos</h2>
-      <div class="gallery-grid">
-        <div class="product-photo">Add Product Photo 1</div>
-        <div class="product-photo">Add Product Photo 2</div>
-        <div class="product-photo">Add Product Photo 3</div>
+    <section class="section">
+      <div class="photo-gallery">
+        <h2 class="section-title">Photo Gallery</h2>
+        <div class="gallery-grid">
+          <div class="photo-slot">Add brand photo here</div>
+          <div class="photo-slot">Add cookie photo here</div>
+          <div class="photo-slot">Add packaging photo here</div>
+        </div>
       </div>
     </section>
 
-    <section class="products" aria-labelledby="products-title">
-      <h2 id="products-title" class="section-title">Our Cookies</h2>
-      <div class="product-grid">
-        <article class="card">
-          <div class="product-photo">Product Image</div>
-          <h3>Small Nut Powdered Cookies</h3>
-          <p>Delicate, nutty, and dusted to perfection. A soft, crumbly favorite.</p>
-        </article>
+    <section class="section">
+      <div class="products">
+        <h2 class="section-title">Our Cookies</h2>
+        <div class="product-grid">
+          <article class="card">
+            <div class="product-image">Add product photo here</div>
+            <div class="card-content">
+              <h3>Small Nut Powdered Cookies</h3>
+              <p>Soft, delicate, and coated with a sweet powdered finish. A comforting favorite in every bite.</p>
+            </div>
+          </article>
 
-        <article class="card">
-          <div class="product-photo">Product Image</div>
-          <h3>Snickerdoodles</h3>
-          <p>Lightly crisp on the edge, soft at the center, and coated in cinnamon sugar.</p>
-        </article>
+          <article class="card">
+            <div class="product-image">Add product photo here</div>
+            <div class="card-content">
+              <h3>Snickerdoodles</h3>
+              <p>Golden cookie bites rolled in cinnamon sugar with the perfect balance of sweetness and spice.</p>
+            </div>
+          </article>
 
-        <article class="card">
-          <div class="product-photo">Product Image</div>
-          <h3>Chocolate Chip Cookies</h3>
-          <p>Golden-baked cookie bites loaded with chocolate chips for every sweet craving.</p>
-        </article>
+          <article class="card">
+            <div class="product-image">Add product photo here</div>
+            <div class="card-content">
+              <h3>Chocolate Chip Cookies</h3>
+              <p>Classic cookie bites loaded with rich chocolate chips for a cozy and familiar treat.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section class="pricing" aria-labelledby="pricing-title">
-      <h2 id="pricing-title" class="section-title">Box Sizes & Prices</h2>
-      <div class="pricing-grid">
-        <article class="card">
-          <h3>200 grams</h3>
-          <p>Perfect for sampling your favorites.</p>
-          <span class="price">₱190</span>
-        </article>
+    <section class="section">
+      <div class="pricing">
+        <h2 class="section-title">Box Sizes & Prices</h2>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>200 grams</h3>
+            <p>Perfect for trying your favorites.</p>
+            <span class="price">₱190</span>
+          </article>
 
-        <article class="card">
-          <h3>300 grams</h3>
-          <p>Great for sharing at home or work.</p>
-          <span class="price">₱290</span>
-        </article>
+          <article class="price-card">
+            <h3>300 grams</h3>
+            <p>Great for sharing with friends and family.</p>
+            <span class="price">₱290</span>
+          </article>
 
-        <article class="card">
-          <h3>400 grams</h3>
-          <p>The best choice for gifting and celebrations.</p>
-          <span class="price">₱390</span>
-        </article>
+          <article class="price-card">
+            <h3>400 grams</h3>
+            <p>Best for gifting and special occasions.</p>
+            <span class="price">₱390</span>
+          </article>
+        </div>
       </div>
     </section>
   </main>
