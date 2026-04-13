@@ -13,6 +13,21 @@
       --text: #5f4036;
       --white: #ffffff;
       --bg: #fffaf7;
+
+      --main-color: #EFD6C9;
+      --logo-color: #E89995;
+      --accent-gold: #EBC200;
+      --accent-caramel: #D78E5E;
+      --text-color: #5e3a2b;
+      --white: #ffffff;
+
+      /* Approximated brand tones based on requested Pantone palette */
+      --pantone-p-55-4c: #D68D81;
+      --pantone-p-48-2c: #EFD6C9;
+      --pantone-p-10-8c: #EBC200;
+      --pantone-p-37-6c: #D78E5E;
+      --cream: #fff9f3;
+
     }
 
     * {
@@ -33,6 +48,26 @@
       color: var(--white);
       padding: 1rem 1.5rem;
       box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+
+      background: linear-gradient(180deg, #fff7f3, var(--main-color));
+      color: var(--text-color);
+
+      background: linear-gradient(180deg, var(--cream), var(--pantone-p-55-4c));
+      color: var(--pantone-p-37-6c);
+
+      line-height: 1.5;
+    }
+
+    header {
+
+      background: var(--white);
+      border-bottom: 4px solid var(--accent-caramel);
+      padding: 0.9rem 1.3rem;
+
+      background-color: var(--pantone-p-37-6c);
+      color: #fff;
+      padding: 1rem 1.5rem;
+
       position: sticky;
       top: 0;
       z-index: 100;
@@ -51,7 +86,32 @@
     .logo-text {
       font-size: 1.6rem;
       font-weight: 800;
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-image {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 3px solid var(--logo-color);
+      object-fit: cover;
+      background: #ffe9e8;
+    }
+
+    .logo-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--logo-color);
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
       letter-spacing: 0.5px;
+
     }
 
     .tagline {
@@ -352,7 +412,7 @@
   </main>
 
   <footer>
-    © 2026 Catela • Joy in Small bites
+    2026 Catela • Joy in Small bites
   </footer>
 </body>
 </html>
