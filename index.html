@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catela | Joy in Small bites</title>
+  <style>
+    :root {
+      /* Approximated brand tones based on requested Pantone palette */
+      --pantone-p-55-4c: #f5dfc8;
+      --pantone-p-48-2c: #f0cfa7;
+      --pantone-p-10-8c: #c68456;
+      --pantone-p-37-6c: #6f4a2f;
+      --cream: #fff9f3;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(180deg, var(--cream), var(--pantone-p-55-4c));
+      color: var(--pantone-p-37-6c);
+      line-height: 1.5;
+    }
+
+    header {
+      background-color: var(--pantone-p-37-6c);
+      color: #fff;
+      padding: 1rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .tagline {
+      font-style: italic;
+      font-size: 0.95rem;
+      opacity: 0.95;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+      display: grid;
+      gap: 2rem;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--pantone-p-48-2c), var(--pantone-p-55-4c));
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 25px rgba(111, 74, 47, 0.15);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin-bottom: 0.6rem;
+      color: var(--pantone-p-37-6c);
+    }
+
+    .hero p {
+      max-width: 58ch;
+      margin-bottom: 1rem;
+    }
+
+    .best-seller {
+      display: inline-block;
+      background-color: var(--pantone-p-10-8c);
+      color: #fff;
+      font-weight: 700;
+      padding: 0.45rem 0.8rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .products,
+    .pricing {
+      background-color: rgba(255, 255, 255, 0.7);
+      border: 2px solid var(--pantone-p-48-2c);
+      border-radius: 16px;
+      padding: 1.5rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .product-grid,
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid var(--pantone-p-48-2c);
+      border-radius: 14px;
+      padding: 1rem;
+      box-shadow: 0 4px 10px rgba(111, 74, 47, 0.08);
+    }
+
+    .card h3 {
+      margin-bottom: 0.35rem;
+      color: var(--pantone-p-37-6c);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+    }
+
+    .price {
+      display: inline-block;
+      margin-top: 0.6rem;
+      font-weight: 700;
+      color: var(--pantone-p-10-8c);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.2rem;
+      background-color: var(--pantone-p-37-6c);
+      color: #f7ede3;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 560px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hero,
+      .products,
+      .pricing {
+        padding: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Catela</div>
+      <div class="tagline">"Joy in Small bites"</div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Homemade Cookies, Carefully Crafted</h1>
+      <p>
+        Catela is a small cookie business specializing in bite-sized joy. We bake
+        with care and flavor in every box, from our classic snickerdoodles to rich
+        chocolate chip cookies.
+      </p>
+      <span class="best-seller">Best Seller: Small Nut Powdered Cookies</span>
+    </section>
+
+    <section class="products" aria-labelledby="products-title">
+      <h2 id="products-title" class="section-title">Our Cookies</h2>
+      <div class="product-grid">
+        <article class="card">
+          <h3>Small Nut Powdered Cookies</h3>
+          <p>Delicate, nutty, and dusted to perfection. A soft, crumbly favorite.</p>
+        </article>
+        <article class="card">
+          <h3>Snickerdoodles</h3>
+          <p>Lightly crisp on the edge, soft at the center, and coated in cinnamon sugar.</p>
+        </article>
+        <article class="card">
+          <h3>Chocolate Chip Cookies</h3>
+          <p>Golden-baked cookie bites loaded with chocolate chips for every sweet craving.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title" class="section-title">Box Sizes & Prices</h2>
+      <div class="pricing-grid">
+        <article class="card">
+          <h3>200 grams</h3>
+          <p>Perfect for sampling your favorites.</p>
+          <span class="price">₱190</span>
+        </article>
+        <article class="card">
+          <h3>300 grams</h3>
+          <p>Great for sharing at home or work.</p>
+          <span class="price">₱290</span>
+        </article>
+        <article class="card">
+          <h3>400 grams</h3>
+          <p>The best choice for gifting and celebrations.</p>
+          <span class="price">₱390</span>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Catela • Joy in Small bites
+  </footer>
+</body>
+</html>
