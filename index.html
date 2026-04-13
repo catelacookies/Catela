@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catela | Joy in Small bites</title>
+  <style>
+    :root {
+      --main-color: #EFD6C9;
+      --logo-color: #E89995;
+      --accent-gold: #EBC200;
+      --accent-caramel: #D78E5E;
+      --text-color: #5e3a2b;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(180deg, #fff7f3, var(--main-color));
+      color: var(--text-color);
+      line-height: 1.5;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 4px solid var(--accent-caramel);
+      padding: 0.9rem 1.3rem;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .brand-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-image {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 3px solid var(--logo-color);
+      object-fit: cover;
+      background: #ffe9e8;
+    }
+
+    .logo-name {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--logo-color);
+    }
+
+    .tagline {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--accent-caramel);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.3rem 3rem;
+      display: grid;
+      gap: 1.4rem;
+    }
+
+    .hero,
+    .products,
+    .pricing,
+    .photo-section {
+      background: rgba(255, 255, 255, 0.85);
+      border: 2px solid #efc9b8;
+      border-radius: 16px;
+      padding: 1.3rem;
+      box-shadow: 0 5px 14px rgba(94, 58, 43, 0.1);
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--main-color), #f8e6dd);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 3vw, 2.4rem);
+      margin-bottom: 0.4rem;
+    }
+
+    .best-seller {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      background: var(--accent-gold);
+      color: #4c3900;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .section-title {
+      font-size: 1.45rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-grid,
+    .pricing-grid,
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.9rem;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #f0d7c7;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .product-photo,
+    .photo-slot {
+      width: 100%;
+      height: 150px;
+      border-radius: 10px;
+      border: 2px dashed var(--accent-caramel);
+      object-fit: cover;
+      margin-bottom: 0.7rem;
+      background: #fff7f0;
+      display: grid;
+      place-items: center;
+      color: #9a6a4b;
+      font-size: 0.9rem;
+      text-align: center;
+      padding: 0.5rem;
+    }
+
+    .card h3 {
+      margin-bottom: 0.35rem;
+      color: var(--logo-color);
+    }
+
+    .price {
+      display: inline-block;
+      margin-top: 0.45rem;
+      color: var(--accent-caramel);
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    .note {
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+      color: #855840;
+    }
+
+    footer {
+      text-align: center;
+      background: var(--logo-color);
+      color: var(--white);
+      padding: 1rem;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="brand-wrap">
+        <!-- Replace this src with your official Catela logo image -->
+        <img
+          class="logo-image"
+          src="assets/photos/logo.png"
+          alt="Catela logo placeholder"
+        />
+        <div class="logo-name">Catela</div>
+      </div>
+      <div class="note">Logo file path: <code>assets/photos/logo.png</code></div>
+      <div class="tagline">"Joy in Small bites"</div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Freshly Baked Happiness in Every Box</h1>
+      <p>
+        Catela is a small cookie business that specializes in bite-sized favorites.
+        We craft every batch with care so your family, friends, and customers can
+        enjoy sweet moments in every order.
+      </p>
+      <span class="best-seller">Best Seller: Small Nut Powdered Cookies</span>
+    </section>
+
+    <section class="products" aria-labelledby="products-title">
+      <h2 id="products-title" class="section-title">Our Products</h2>
+      <div class="product-grid">
+        <article class="card">
+          <img class="product-photo" src="assets/photos/product-small-nut-powdered-cookies.jpg" alt="Small nut powdered cookies placeholder" />
+          <h3>Small Nut Powdered Cookies</h3>
+          <p>Soft and delicate cookies with a nutty flavor and powdery finish.</p>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="assets/photos/product-snickerdoodles.jpg" alt="Snickerdoodles placeholder" />
+          <h3>Snickerdoodles</h3>
+          <p>Classic cinnamon-sugar cookies with a soft center and light crisp edge.</p>
+        </article>
+
+        <article class="card">
+          <img class="product-photo" src="assets/photos/product-chocolate-chip.jpg" alt="Chocolate chip cookies placeholder" />
+          <h3>Chocolate Chip Cookies</h3>
+          <p>Buttery cookie bites packed with rich chocolate chips.</p>
+        </article>
+      </div>
+      <p class="note">Tip: Upload your product images in assets/photos using the documented filenames.</p>
+    </section>
+
+    <section class="pricing" aria-labelledby="pricing-title">
+      <h2 id="pricing-title" class="section-title">Box Sizes & Prices</h2>
+      <div class="pricing-grid">
+        <article class="card">
+          <h3>200 grams</h3>
+          <p>Good for a quick treat or sampler box.</p>
+          <span class="price">₱190</span>
+        </article>
+        <article class="card">
+          <h3>300 grams</h3>
+          <p>A popular option for sharing.</p>
+          <span class="price">₱290</span>
+        </article>
+        <article class="card">
+          <h3>400 grams</h3>
+          <p>Best for parties, gifts, and larger orders.</p>
+          <span class="price">₱390</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="photo-section" aria-labelledby="photos-title">
+      <h2 id="photos-title" class="section-title">Photo Section (Add Your Own Photos)</h2>
+      <div class="photo-grid">
+        <div class="photo-slot">Add Brand Story Photo Here</div>
+        <div class="photo-slot">Add Cookie Box Photo Here</div>
+        <div class="photo-slot">Add Customer/Events Photo Here</div>
+      </div>
+      <p class="note">You can replace these placeholders with &lt;img&gt; tags that point to files inside assets/photos/.</p>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Catela • Joy in Small bites
+  </footer>
+</body>
+</html>
