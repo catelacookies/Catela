@@ -6,12 +6,13 @@
   <title>Catela | Joy in Small bites</title>
   <style>
     :root {
-      /* Approximated brand tones based on requested Pantone palette */
-      --pantone-p-55-4c: #f5dfc8;
-      --pantone-p-48-2c: #f0cfa7;
-      --pantone-p-10-8c: #c68456;
-      --pantone-p-37-6c: #6f4a2f;
-      --cream: #fff9f3;
+      --main-color: #EFD6C9;
+      --logo-color: #E89995;
+      --accent-yellow: #EBC200;
+      --accent-brown: #D78E5E;
+      --text-color: #6b4b3e;
+      --white: #ffffff;
+      --soft-bg: #fff8f4;
     }
 
     * {
@@ -22,18 +23,19 @@
 
     body {
       font-family: "Trebuchet MS", "Segoe UI", Tahoma, sans-serif;
-      background: linear-gradient(180deg, var(--cream), var(--pantone-p-55-4c));
-      color: var(--pantone-p-37-6c);
-      line-height: 1.5;
+      background: linear-gradient(180deg, var(--soft-bg), var(--main-color));
+      color: var(--text-color);
+      line-height: 1.6;
     }
 
     header {
-      background-color: var(--pantone-p-37-6c);
-      color: #fff;
+      background-color: var(--logo-color);
+      color: var(--white);
       padding: 1rem 1.5rem;
       position: sticky;
       top: 0;
       z-index: 10;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
     nav {
@@ -43,11 +45,12 @@
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
+      flex-wrap: wrap;
     }
 
     .logo {
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 1.5rem;
+      font-weight: 800;
       letter-spacing: 0.5px;
     }
 
@@ -66,16 +69,20 @@
     }
 
     .hero {
-      background: linear-gradient(135deg, var(--pantone-p-48-2c), var(--pantone-p-55-4c));
-      border-radius: 20px;
+      background: linear-gradient(135deg, var(--main-color), var(--accent-brown));
+      border-radius: 22px;
       padding: 2rem;
-      box-shadow: 0 8px 25px rgba(111, 74, 47, 0.15);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 1.5rem;
+      align-items: center;
     }
 
     .hero h1 {
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
-      margin-bottom: 0.6rem;
-      color: var(--pantone-p-37-6c);
+      font-size: clamp(1.9rem, 3vw, 2.8rem);
+      margin-bottom: 0.7rem;
+      color: var(--text-color);
     }
 
     .hero p {
@@ -85,65 +92,92 @@
 
     .best-seller {
       display: inline-block;
-      background-color: var(--pantone-p-10-8c);
-      color: #fff;
-      font-weight: 700;
-      padding: 0.45rem 0.8rem;
+      background-color: var(--accent-yellow);
+      color: var(--text-color);
+      font-weight: 800;
+      padding: 0.5rem 0.9rem;
       border-radius: 999px;
       font-size: 0.9rem;
     }
 
+    .logo-photo,
+    .product-photo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 18px;
+      border: 2px dashed var(--logo-color);
+      background: rgba(255, 255, 255, 0.65);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: var(--text-color);
+      font-weight: 700;
+      padding: 1rem;
+    }
+
     .section-title {
-      font-size: 1.5rem;
+      font-size: 1.55rem;
       margin-bottom: 1rem;
+      color: var(--logo-color);
     }
 
     .products,
-    .pricing {
-      background-color: rgba(255, 255, 255, 0.7);
-      border: 2px solid var(--pantone-p-48-2c);
-      border-radius: 16px;
+    .pricing,
+    .gallery {
+      background-color: rgba(255, 255, 255, 0.72);
+      border: 2px solid var(--accent-brown);
+      border-radius: 18px;
       padding: 1.5rem;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(3px);
     }
 
     .product-grid,
-    .pricing-grid {
+    .pricing-grid,
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 1rem;
     }
 
     .card {
-      background-color: #fff;
-      border: 1px solid var(--pantone-p-48-2c);
-      border-radius: 14px;
+      background-color: var(--white);
+      border: 1px solid var(--main-color);
+      border-radius: 16px;
       padding: 1rem;
-      box-shadow: 0 4px 10px rgba(111, 74, 47, 0.08);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
     }
 
     .card h3 {
-      margin-bottom: 0.35rem;
-      color: var(--pantone-p-37-6c);
+      margin-bottom: 0.4rem;
+      color: var(--text-color);
     }
 
     .card p {
       font-size: 0.95rem;
+      margin-bottom: 0.8rem;
     }
 
     .price {
       display: inline-block;
-      margin-top: 0.6rem;
-      font-weight: 700;
-      color: var(--pantone-p-10-8c);
+      margin-top: 0.5rem;
+      font-weight: 800;
+      color: var(--accent-brown);
     }
 
     footer {
       text-align: center;
       padding: 1.2rem;
-      background-color: var(--pantone-p-37-6c);
-      color: #f7ede3;
+      background-color: var(--logo-color);
+      color: var(--white);
       font-size: 0.95rem;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 560px) {
@@ -154,7 +188,8 @@
 
       .hero,
       .products,
-      .pricing {
+      .pricing,
+      .gallery {
         padding: 1.1rem;
       }
     }
@@ -170,27 +205,48 @@
 
   <main>
     <section class="hero">
-      <h1>Homemade Cookies, Carefully Crafted</h1>
-      <p>
-        Catela is a small cookie business specializing in bite-sized joy. We bake
-        with care and flavor in every box, from our classic snickerdoodles to rich
-        chocolate chip cookies.
-      </p>
-      <span class="best-seller">Best Seller: Small Nut Powdered Cookies</span>
+      <div>
+        <h1>Homemade Cookies, Carefully Crafted</h1>
+        <p>
+          Catela is a small cookie business specializing in bite-sized joy.
+          We bake with care and flavor in every box, from our classic
+          snickerdoodles to rich chocolate chip cookies.
+        </p>
+        <span class="best-seller">Best Seller: Small Nut Powdered Cookies</span>
+      </div>
+      <div class="logo-photo">
+        Add Your Logo Here
+        <br />
+        <small>(replace with image)</small>
+      </div>
+    </section>
+
+    <section class="gallery" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="section-title">Photos</h2>
+      <div class="gallery-grid">
+        <div class="product-photo">Add Product Photo 1</div>
+        <div class="product-photo">Add Product Photo 2</div>
+        <div class="product-photo">Add Product Photo 3</div>
+      </div>
     </section>
 
     <section class="products" aria-labelledby="products-title">
       <h2 id="products-title" class="section-title">Our Cookies</h2>
       <div class="product-grid">
         <article class="card">
+          <div class="product-photo">Product Image</div>
           <h3>Small Nut Powdered Cookies</h3>
           <p>Delicate, nutty, and dusted to perfection. A soft, crumbly favorite.</p>
         </article>
+
         <article class="card">
+          <div class="product-photo">Product Image</div>
           <h3>Snickerdoodles</h3>
           <p>Lightly crisp on the edge, soft at the center, and coated in cinnamon sugar.</p>
         </article>
+
         <article class="card">
+          <div class="product-photo">Product Image</div>
           <h3>Chocolate Chip Cookies</h3>
           <p>Golden-baked cookie bites loaded with chocolate chips for every sweet craving.</p>
         </article>
@@ -205,11 +261,13 @@
           <p>Perfect for sampling your favorites.</p>
           <span class="price">₱190</span>
         </article>
+
         <article class="card">
           <h3>300 grams</h3>
           <p>Great for sharing at home or work.</p>
           <span class="price">₱290</span>
         </article>
+
         <article class="card">
           <h3>400 grams</h3>
           <p>The best choice for gifting and celebrations.</p>
